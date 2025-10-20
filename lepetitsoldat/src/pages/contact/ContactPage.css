@@ -1,0 +1,86 @@
+
+.contact{
+    padding-top: 50px;
+    display: flex;
+    place-content: center;
+    justify-items: center;
+
+    height: calc(100dvh - var(--nav-h));
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* iOS */
+
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE/Edge old */
+}
+.contact::-webkit-scrollbar{      /* Chrome/Safari/Edge */
+    width: 0;
+    height: 0;
+}
+
+.contact h2{
+    font-size: clamp(28px, 3vw, 40px); /* ← taille contrôlée */
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-transform: none;
+}
+.contact p{
+    font-size: clamp(11px, 1.2vw, 16px);
+    line-height: 1.55;
+}
+
+/* Carte + formulaire */
+.contact-form{
+    display: grid;
+    gap: 8px;
+    max-width: 420px;
+    padding: clamp(16px, 3.5vw, 28px);
+    background: rgba(255,255,255,.5);
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.10);
+}
+.contact-form label{
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--ink);
+}
+.contact-form input,
+.contact-form textarea{
+    padding: .65rem .75rem;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    background: #fff;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px rgba(43,59,47,.15);
+}
+.contact-form textarea{ resize: vertical; min-height: 140px; }
+
+/* Bouton contour (aligné sur ta nav) */
+.contact-form button{
+    justify-self: start;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    padding: 12px 18px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+    transition: transform .08s, background .15s;
+    margin-top: 5px;
+}
+.contact-form button:hover{ transform: translateY(-1px); background: rgba(0,0,0,.03); }
+.contact-form button:disabled{ opacity: .65; cursor: progress; }
+
+/* Messages d’état */
+.contact-form [role="status"]{ margin-top: 4px; color: #276b44; }
+.contact-form [role="alert"]{  margin-top: 4px; color: #b42318; }
+
+.rgpd{ font-size: .9rem; opacity: .8; }
