@@ -5,7 +5,12 @@
     justify-content: center;     /* au lieu de space-around */
     gap: 125px;
     padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: fit-content;        /* s’adapte au contenu */
+    margin: 0 auto;            /* centre le bloc */
+    border-bottom: 3px solid #35553d;
 }
+
 
 .brand{
     display:flex;

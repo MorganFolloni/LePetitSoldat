@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import pb from "../../pb";              // <-- singleton (pb.autoCancellation(false) dans pb.ts)
 import "./Nav.css";
+import {refresh} from "../../auth.ts";
 
 type UserModel = {
     id: string;
@@ -14,7 +15,7 @@ export default function Navbar() {
     const [me, setMe] = useState<UserModel | null>(pb.authStore.model as any);
     const [errMsg, setErrMsg] = useState<string | null>(null);
     const isLoggedIn = pb.authStore.isValid;
-    const isAdmin = isLoggedIn && !!(me as any)?.isAdmin;
+    const IsAdmin = isLoggedIn && !!(me as any)?.isAdmin;
 
     // Raccourci clavier
     useEffect(() => {
@@ -65,6 +66,20 @@ export default function Navbar() {
             e.clientY >= rect.top && e.clientY <= rect.bottom;
         if (!inDialog) dlgRef.current?.close();
     }
+
+    useEffect(() => {
+        const doRefresh = async () => {
+            if (pb.authStore.isValid) {
+                try {
+                    await refresh(); // your helper handles refresh + errors
+                } catch {
+                    pb.authStore.clear();
+                    setMe(null);
+                }
+            }
+        };
+        doRefresh();
+    }, []);
 
     return (
         <header className="nav">

@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;500;600&display=swap');
 
 :root{
-    --paper: #f1e3c8;
+    --paper: #ac9972;
     --paper-edge:#d6c7a9;
     --ink:#35553d;
     --ink-soft:#475747;
 }
 
 html, body, #root{
+    background-image: url("public/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     height: auto;            /* retire la hauteur forcée */
     min-height: 100dvh;      /* garde un plancher en hauteur */
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--ink);
-    background-image: url("https://videos.openai.com/vg-assets/assets%2Ftask_01k473rrp4erwtspjfvkrvaeke%2F1756880581_img_1.webp?st=2025-09-03T05%3A19%3A14Z&se=2025-09-09T06%3A19%3A14Z&sks=b&skt=2025-09-03T05%3A19%3A14Z&ske=2025-09-09T06%3A19%3A14Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=jBjM8qYUnIAZ357UC8qFg8Q7iHsZ0MD1csEZTim%2B5D8%3D&az=oaivgprodscus");
 }
 
 body{

@@ -13,9 +13,19 @@ export function logout() {
 }
 
 export async function refresh() {
-    // valide + rafraîchit le JWT si proche de l’expiration
-    const { token, record } = await pb.collection("users").authRefresh();
-    return { token, user: record };
+    if (!pb.authStore.isValid) {
+        console.warn("Aucune session valide, refresh ignoré.");
+        return null; // ⚠️ PAS d'appel à authRefresh
+    }
+
+    try {
+        const { token, record } = await pb.collection("users").authRefresh();
+        return { token, user: record };
+    } catch (err) {
+        console.error("Échec du refresh:", err);
+        pb.authStore.clear(); // nettoyer la session
+        return null;
+    }
 }
 
 // helpers

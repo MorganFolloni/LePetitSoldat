@@ -1,0 +1,176 @@
+.lbRoot {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.lbOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.lbModal {
+    position: relative;
+    z-index: 2;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: rgba(255,255,255,.5);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.lbViewer {
+    position: relative;
+    flex: 1;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lbImgWrap {
+    max-width: 100%;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lbImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.lbNoImg {
+    color: #fff;
+    font-size: 16px;
+}
+
+.lbArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.lbArrowLeft {
+    left: 8px;
+}
+
+.lbArrowRight {
+    right: 8px;
+}
+
+.lbInfo {
+    padding: 1rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lbHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.lbTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.lbRef, .lbBrand, .lbPrice {
+    font-size: 14px;
+    color: #555;
+}
+
+.lbDsc {
+    font-size: 14px;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.lbThumbs {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.lbThumb {
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 2px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    background: #f0f0f0;
+}
+
+.lbThumb img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.lbThumb.isActive {
+    border-color: var(--ink);
+}
+
+.lbFooter {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnPlain {
+    background: none;
+    border: 1px solid var(--line);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.btnPlain:hover {
+    background: #f5f5f5;
+}
+
+.lbImgWrap {
+    width: 800px;   /* taille standard */
+    max-width: 90vw;
+    height: 450px;  /* ratio 16:9 approximatif */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+}
+
+.lbImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* on voit l’image entière */
+}

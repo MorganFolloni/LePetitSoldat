@@ -1,0 +1,194 @@
+/* Overlay sombre pour modal */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* sombre mais pas trop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenu modal */
+.modalContent {
+    background: #fefefe; /* fond clair pour lisibilité */
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    color: #222;
+}
+
+/* Titre */
+.formTitle {
+    margin: 0 0 1.5rem;
+    font-family: Cinzel, serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #111;
+}
+
+/* Message d'erreur */
+.formError {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    color: #856404;
+    font-size: 14px;
+}
+
+/* Groupes de champs */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+/* Champs input, textarea, select */
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    padding: 0.85rem 1rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: Inter, system-ui, sans-serif;
+    color: #222;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Placeholder visible */
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: #999;
+}
+
+/* Focus des champs */
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: -1px;
+}
+
+/* Photos existantes */
+.existingPhotos {
+    margin-bottom: 1.25rem;
+}
+
+.existingPhotosLabel {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+/* Grille de photos */
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+}
+
+.photoItem {
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.photoItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoDeleteBtn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoDeleteBtn:hover {
+    background: rgba(255, 0, 0, 1);
+}
+
+/* Nouvelles photos */
+.photoPreview {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #f0f0f0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+/* Actions du formulaire */
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Boutons */
+.btnPrimary,
+.btnSecondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.btnPrimary {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+}
+
+.btnPrimary:hover {
+    opacity: 0.9;
+}
+
+.btnPrimary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btnSecondary {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.btnSecondary:hover {
+    background: #f9f9f9;
+}

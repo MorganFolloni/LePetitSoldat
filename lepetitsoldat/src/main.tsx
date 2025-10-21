@@ -7,6 +7,7 @@ import "./App.css"
 import CollectionPage from "./pages/collection/CollectionPage.tsx";
 import ContactForm from "./pages/contact/ContactPage.tsx";
 import emailjs from "@emailjs/browser";
+import ItemFormPage from "./pages/zzzz/ItemFormPage.tsx";
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY!);
 
@@ -18,6 +19,8 @@ createRoot(document.getElementById("root")!).render(
                 <Route path="/" element={<Home />} />
                 <Route path="/collection" element={<CollectionPage />} />
                 <Route path="/contact" element={<ContactForm />} />
+                <Route path="/collection/new" element={<ItemFormPage />} />
+                <Route path="/collection/edit/:id" element={<ItemFormPage />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
